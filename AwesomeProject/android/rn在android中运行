@@ -9,6 +9,18 @@ https://blog.csdn.net/bzlj2912009596/article/details/86641737
 
    使用例子中的  AwesomeProject
 
+实战操作练习：（rn与andrioid交互）demo
+  https://github.com/hanxiaofeng/ReactNativeAndroid
+
+实战演练（手动实现demo）
+问题：项目中修改了rn中js的代码，运行项目没反应
+解决：js编译后的所有代码都是在 src--->main————>attes-->中必须重新刷新即可
+      运行的命令行去重新添加（先删除后命令行）
+
+      react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output app/src/main/assets/index.android.bundle --assets-dest app/src/main/res/
+
+      重新编译后，会重新生成一个 index.android.bundle
+
 
 
 
