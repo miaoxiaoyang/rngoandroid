@@ -125,6 +125,14 @@ react-native bundle --platform android --dev false --entry-file index.android.js
             abiFilters "armeabi-v7a", "x86"
         }
 ```
+具体的实操问题；
+    http://www.liuchungui.com/blog/2016/05/08/reactnativezhi-yuan-sheng-mo-kuai-kai-fa-bing-fa-bu-androidpian/
+具体流程： 1.创建原生模块
+          2.注册原生模块
+          3.实例运用，就是复杂动画效果用js实现，混合开发
+          
+          
+
 
 改动js中的代码，运行后没反应步骤
 1.yarn install

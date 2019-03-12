@@ -17,7 +17,10 @@ import static android.os.Build.VERSION_CODES.M;
  * 连接转换
  * 原生类继承 ReactContextBaseJavaModule 以便实现jascript功能,返回一个方法getName(); 函数返回一个字符串即是这个 js代码中调用的名称
  *  组件.名字.方法
- *
+ * 创建原生模块
+ * 1.继承 ReactContextBaseJavaModule
+ * 2.返回两个，A.构造器 B.返回一个方法getName()
+ * 3.方法返回来的一个字符串，就是调用的时候的一种名称
  */
 
 public class MyIntentModule extends ReactContextBaseJavaModule {

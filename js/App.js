@@ -3,12 +3,12 @@ import {View, Text, StyleSheet, TouchableHighlight} from 'react-native';
 
 //挂载组件 rn中的，组件调用 nativemodules中的 android中的类跟方法
 //组件中的代码详解 https://blog.csdn.net/sinat_17775997/article/details/70198637
-var { NativeModules } = require('react-native');//最后在这里调用
+//在js中访问原生代码
+var { NativeModules } = require('react-native');//最后在这里调用 ,组件调用.getName()函数中返回来的名称.方法（3步）
 export default class navigation extends Component {
 
     //当组件挂载之后,去获取Activity传输过来的数据...componentDidMount作用就是从activity返回来数据给js界面
-    //
-
+    //组件完成挂载到网上才会进行，所以加载数据必须是这个方法，保证了数据中的可用性
     componentDidMount(){
         //进行从Activity中获取数据传输到JS
         NativeModules.MyIntentModule.dataToJS((msg) => {
@@ -34,7 +34,7 @@ export default class navigation extends Component {
                 <CustomButton
                     // text="点击弹出Toast消息"
                     // onPress={()=>NativeModules.ToastCustomAndroid.show("我是ToastCustomAndroid弹出消息",NativeModules.ToastCustomAndroid.SHORT)}
-                    text="点击跳转原生界面"
+                    text="点击跳转原生界面",
                     onPress={()=>NativeModules.MyIntentModule.startActivityFromJS("com.wangkeke.reactnativedemo.SecondActivity","原生界面，你好,我来自RN-JS页面")}
                 />
                 <CustomButton

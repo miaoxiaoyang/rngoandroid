@@ -11,10 +11,15 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Created by wangkeke on 2017/5/27.
+ * 注册原生模块
+ * 1.需要继承ReactPackage接口，返回来3个方法
+ * 2.具体方法如下解释
+ *
+ *
  */
 
 public class AnIntentReactPackage implements ReactPackage {
+    //添加原生模块
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         List<NativeModule> modules = new ArrayList<>();
@@ -22,6 +27,7 @@ public class AnIntentReactPackage implements ReactPackage {
         return modules;
     }
 
+    //暂时不清楚干嘛
     @Override
     public List<Class<? extends JavaScriptModule>> createJSModules() {
         return Collections.emptyList();
